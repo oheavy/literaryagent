@@ -14,3 +14,17 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+$(function() {
+  $("#document_user_tokens").tokenInput("/users.json", {
+    crossDomain: false,
+    prePopulate: $("#document_user_tokens").data("pre")
+  });
+});
+
+// $(function() {
+  // $("#user_document_tokens").tokenInput("/documents.json", {
+    // crossDomain: false,
+    // prePopulate: $("#user_document_tokens").data("pre")
+  // });
+// });

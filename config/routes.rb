@@ -1,4 +1,6 @@
 Literaryagent::Application.routes.draw do
+  resources :documents
+
   devise_for :users
   resources :users, :only => [:show, :index]
 

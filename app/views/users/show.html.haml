@@ -4,3 +4,9 @@
 .p
   Email:
   = @user.email if @user.email
+%ul.documents
+  - @user.documents.each do |document|
+    %li
+      = link_to document.name, document
+      Created at:
+      = document.created_at.to_date

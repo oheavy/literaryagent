@@ -7,8 +7,8 @@
     %title= content_for?(:title) ? yield(:title) : "Literary Agent"
     %meta{:content => "", :name => "description"}
     %meta{:content => "", :name => "author"}
-    = stylesheet_link_tag    "application", :media => "all"
-    = javascript_include_tag "application"
+    = stylesheet_link_tag    "application", "token-input", :media => "all"
+    = javascript_include_tag "application", "jquery.tokeninput"
     = csrf_meta_tags
     = yield(:head)
   %body
