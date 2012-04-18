@@ -4,9 +4,19 @@
 .p
   Email:
   = @user.email if @user.email
-%ul.documents
-  - @user.documents.each do |document|
-    %li
-      = link_to document.name, document
-      Created at:
-      = document.created_at.to_date
+.p
+  Created documents:
+  %ul.documents
+    - @user.created_documents.each do |document|
+      %li
+        = link_to document.name, document
+        Created at:
+        = document.created_at.to_date
+.p
+  Accessible documents:
+  %ul.documents
+    - @user.documents.each do |document|
+      %li
+        = link_to document.name, document
+        Created at:
+        = document.created_at.to_date

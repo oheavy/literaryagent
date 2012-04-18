@@ -8,10 +8,12 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me#, :confirmed_at
 
 
-  validates_presence_of :name, :email, :password, :password_confirmation
+  validates_presence_of :name, :email
   validates_uniqueness_of :email, :case_sensitive => false
 
   has_and_belongs_to_many :documents
+  has_many :created_documents, :class_name => "Document", :foreign_key => "author_id"
+  has_one :current_document, :class_name => "Document"
 
   # attr_accessible :documents_tokens
   # attr_reader :documents_tokens

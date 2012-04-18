@@ -1,0 +1,22 @@
+%h1 Listing versions
+
+%table
+  %tr
+    %th Content
+    %th Document
+    %th
+    %th
+    %th
+
+  - @versions.each do |version|
+    %tr
+      %td= version.content
+      %td= version.document.name
+      %td= link_to 'Show', version
+      %td= link_to 'Edit', edit_version_path(version)
+      %td= link_to 'Destroy', version, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+.btn
+  = link_to 'New Version', new_version_path

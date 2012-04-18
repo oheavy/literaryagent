@@ -1,4 +1,6 @@
 Literaryagent::Application.routes.draw do
+  resources :versions
+
   resources :documents
 
   devise_for :users

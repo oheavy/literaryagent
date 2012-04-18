@@ -7,6 +7,8 @@
           %li= msg
 
   .field
+    = f.hidden_field :author_id, :value => @document.new_record? ? current_user.id : @document.author_id
+  .field
     = f.label :name
     = f.text_field :name
   .field
