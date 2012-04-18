@@ -7,7 +7,7 @@ class VersionsController < ApplicationController
     @versions = Version.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.json { render json: @versions }
     end
   end
@@ -18,7 +18,7 @@ class VersionsController < ApplicationController
     @version = Version.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.json { render json: @version }
     end
   end
@@ -29,7 +29,7 @@ class VersionsController < ApplicationController
     @version = Version.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
       format.json { render json: @version }
     end
   end

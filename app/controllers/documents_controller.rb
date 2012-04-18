@@ -4,11 +4,11 @@ class DocumentsController < ApplicationController
   # GET /documents
   # GET /documents.json
   def index
-    @documents = Document.where("name like ?", "%#{params[:q]}%")
+    @documents = current_user.documents
 
     respond_to do |format|
       format.html
-      format.json { render :json => @documents.map(&:attributes) }
+      format.json { render json: @documents }
     end
   end
 
@@ -43,6 +43,7 @@ class DocumentsController < ApplicationController
   # POST /documents.json
   def create
     @document = Document.new(params[:document])
+    current_user.documents << @document
 
     respond_to do |format|
       if @document.save

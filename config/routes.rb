@@ -1,10 +1,9 @@
 Literaryagent::Application.routes.draw do
-  resources :versions
-
-  resources :documents
-
   devise_for :users
   resources :users, :only => [:show, :index]
+  resources :documents do
+    resources :versions
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -17,8 +16,6 @@ Literaryagent::Application.routes.draw do
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
 
   # Sample resource route with options:
   #   resources :products do
@@ -56,10 +53,10 @@ Literaryagent::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'home#show'
   end
 
-  root :to => "home#index"
+  root :to => "home#show"
 
 # See how all your routes lay out with "rake routes"
 

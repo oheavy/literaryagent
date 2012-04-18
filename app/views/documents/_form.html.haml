@@ -12,7 +12,7 @@
     = f.label :name
     = f.text_field :name
   .field
-    = f.label :user_tokens, "Users"
+    = f.label :user_tokens, "Users to share with"
     = f.text_field :user_tokens, "data-pre" => @document.users.map(&:attributes).to_json
   .actions
     = f.submit 'Save', :class => "btn"

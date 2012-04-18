@@ -21,10 +21,3 @@ $(function() {
     prePopulate: $("#document_user_tokens").data("pre")
   });
 });
-
-// $(function() {
-  // $("#user_document_tokens").tokenInput("/documents.json", {
-    // crossDomain: false,
-    // prePopulate: $("#user_document_tokens").data("pre")
-  // });
-// });

@@ -1,10 +1,12 @@
+- if user_signed_in?
+  .btn
+    = link_to 'Save Work', new_document_path
+  .btn
+    = link_to 'Load Work', documents_path
 %h1 Editor
 .p
   = text_area_tag :content, "Input Text Here", :size => "3x15", :class => "input-xlarge"
 
-- if user_signed_in?
-  .btn
-    = link_to 'Save Document', new_document_path
 .btn
   = link_to 'Improve Text Readibility', root_path
 .btn

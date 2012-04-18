@@ -13,12 +13,5 @@ class User < ActiveRecord::Base
 
   has_and_belongs_to_many :documents
   has_many :created_documents, :class_name => "Document", :foreign_key => "author_id"
-  has_one :current_document, :class_name => "Document"
-
-  # attr_accessible :documents_tokens
-  # attr_reader :documents_tokens
-  #
-  # def documents_tokens=(ids)
-  # self.document_ids = ids.split(",")
-  # end
+  belongs_to :current_document, :class_name => "Document"
 end
